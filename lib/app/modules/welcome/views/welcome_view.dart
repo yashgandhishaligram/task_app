@@ -14,7 +14,7 @@ class WelcomeView extends GetView<WelcomeController> {
   Widget build(BuildContext context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      backgroundColor: isDarkMode? AppColors.textWhiteColor : AppColors.darkBgColor,
+      backgroundColor: isDarkMode? AppColors.darkBgColor : AppColors.textWhiteColor,
       body: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
         padding: const EdgeInsets.only(top: 80.0),
@@ -27,17 +27,15 @@ class WelcomeView extends GetView<WelcomeController> {
                 child: Container(
                     height: 77,
                     width: 250,
-                    child: isDarkMode?
+                    child:
                     Image.asset(
+                      isDarkMode?
+                      AppImages.appLogoDarkPNG:
                         AppImages.appLogoLightPNG,
-                    ):
-                    Image.asset(
-                        AppImages.appLogoDarkPNG,
                     )
                 ),
               ),
             ),
-            // Spacer(),
             SizedBox(
               height: 50,
             ),
@@ -49,7 +47,6 @@ class WelcomeView extends GetView<WelcomeController> {
                 child: Image.asset(AppImages.centerLogo),
               ),
             ),
-            // Spacer(),
             SizedBox(
               height: 35,
             ),
@@ -61,8 +58,8 @@ class WelcomeView extends GetView<WelcomeController> {
                     height: 248,
                     width: 291,
                     child: Image.asset(
-                      isDarkMode? AppImages.bottomLogoLight:
-                      AppImages.bottomLogoDark,
+                      isDarkMode? AppImages.bottomLogoDark:
+                      AppImages.bottomLogoLight,
                     ),
                   ),
                 ),
@@ -74,7 +71,7 @@ class WelcomeView extends GetView<WelcomeController> {
                           "Convenient and productive task management!",
                           style: TextStyle(
                             fontSize: 32,
-                            color: isDarkMode? AppColors.textColor : AppColors.textWhiteColor,
+                            color: isDarkMode? AppColors.textWhiteColor : AppColors.textColor,
                             fontWeight: FontWeight.w600
                           ),
                         ),
@@ -85,8 +82,9 @@ class WelcomeView extends GetView<WelcomeController> {
                     CustomButton(
                       onTap: () {
                           // Get.offAndToNamed(Routes.HOME);
-                        Get.toNamed(Routes.HOME);
+                        Get.toNamed(Routes.LOGIN);
                       },
+                      contentPadding: EdgeInsets.only(left: 110,top: 15,bottom: 15,right: 110),
                       buttonText: "Get Started",
                       btnBGColor: AppColors.appPrimaryColor,
                     )
@@ -95,7 +93,6 @@ class WelcomeView extends GetView<WelcomeController> {
                 )
               ],
             )
-
           ],
         ),
       )

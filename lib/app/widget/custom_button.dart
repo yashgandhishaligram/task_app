@@ -5,14 +5,14 @@ class CustomButton extends StatelessWidget {
     required this.onTap,
     required this.buttonText,
     this.btnBGColor,
-    //this.contentPadding
+    this.contentPadding
 
   }) : super(key: key);
 
   final String? buttonText;
   final GestureTapCallback? onTap;
   final Color? btnBGColor;
-  //final EdgeInsetsGeometry? contentPadding;
+  final EdgeInsetsGeometry? contentPadding;
   @override
   Widget build(BuildContext context) {
     return customElevatedButton();
@@ -51,7 +51,7 @@ class CustomButton extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.only(left: 110,top: 15,bottom: 15,right: 110),
+            padding: contentPadding!,
             child: Text(
               buttonText!,
               style: TextStyle(
