@@ -7,4 +7,6 @@ class AppImages {
   static const String bottomLogoLight = "assets/images/bottom_logo_light.png";
   static const String bottomLogoDark = "assets/images/bottom_logo_dark.png";
   static const String centerLogo = "assets/images/center_logo.png";
+  static const String appVerticalDarkLogo = "assets/images/app_vertical_dark_logo.png";
+  static const String appVerticalLightLogo = "assets/images/app_vertical_light_logo.png";
 }
