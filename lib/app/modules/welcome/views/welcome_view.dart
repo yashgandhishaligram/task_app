@@ -16,7 +16,7 @@ class WelcomeView extends GetView<WelcomeController> {
     return Scaffold(
       backgroundColor: isDarkMode? AppColors.darkBgColor : AppColors.textWhiteColor,
       body: SingleChildScrollView(
-        physics: const NeverScrollableScrollPhysics(),
+       // physics: const NeverScrollableScrollPhysics(),
         padding: const EdgeInsets.only(top: 80.0),
         child: Column(
           children: [
