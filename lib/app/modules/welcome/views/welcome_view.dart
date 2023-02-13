@@ -84,11 +84,9 @@ class WelcomeView extends GetView<WelcomeController> {
                           // Get.offAndToNamed(Routes.HOME);
                         Get.toNamed(Routes.LOGIN);
                       },
-                      contentPadding: EdgeInsets.only(left: 110,top: 15,bottom: 15,right: 110),
                       buttonText: "Get Started",
                       btnBGColor: AppColors.appPrimaryColor,
                     )
-
                   ],
                 )
               ],

@@ -6,6 +6,7 @@ import 'package:task_app/app/core/constants/images.dart';
 import 'package:task_app/app/core/theme/colors.dart';
 import 'package:task_app/app/widget/custom_button.dart';
 
+import '../../../routes/app_pages.dart';
 import '../../../widget/custom_checkbox.dart';
 import '../../../widget/custom_textfield.dart';
 import '../controllers/login_controller.dart';
@@ -42,20 +43,9 @@ class LoginView extends GetView<LoginController> {
                      ),
                       ),
                    SizedBox(height: 50),
-                   Padding(
-                     padding: const EdgeInsets.only(left: 10.0),
-                     child: Text(
-                       "Email ID",
-                       style: TextStyle(
-                         fontSize: 14,
-                         fontWeight: FontWeight.w500,
-                         color: AppColors.titleTextColor
-                       ),
-                     ),
-                   ),
-                   SizedBox(height: 6),
                    CustomFormField(
                        controller: controller.emailController,
+                       textFieldLabel: "Email ID",
                        keyboardType: TextInputType.emailAddress,
                        prefixIcon: Align(
                          widthFactor: 2.5,
@@ -69,20 +59,9 @@ class LoginView extends GetView<LoginController> {
                        hint: "Enter Your Email",
                        validator: "email"),
                    SizedBox(height: 16),
-                   Padding(
-                     padding: const EdgeInsets.only(left: 10.0),
-                     child: Text(
-                       "Password",
-                       style: TextStyle(
-                           fontSize: 14,
-                           fontWeight: FontWeight.w500,
-                           color: AppColors.titleTextColor
-                       ),
-                     ),
-                   ),
-                   SizedBox(height: 6),
                    CustomFormField(
                        controller: controller.passwordController,
+                       textFieldLabel: "Password",
                        keyboardType: TextInputType.visiblePassword,
                        isObscure: controller.isObsecure.value,
                        prefixIcon: Align(
@@ -166,9 +145,10 @@ class LoginView extends GetView<LoginController> {
                  ),
                  Padding(
                    padding: EdgeInsets.fromLTRB(22.0,isDarkMode ? 80.0 : 51.0,22.0,30.0),
-                   child: CustomButton(onTap: () {},
+                   child: CustomButton(onTap: () {
+                      Get.toNamed(Routes.FORGET_PASSWORD);
+                   },
                      buttonText: "Login",
-                     contentPadding: const EdgeInsets.only(left: 135,top: 15,bottom: 15,right: 135),
                      btnBGColor: AppColors.appPrimaryColor,),
                  )
                ],

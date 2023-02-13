@@ -29,6 +29,7 @@ class CustomFormField extends StatelessWidget {
     this.isCapitalized = false,
     this.maxLines = 1,
     this.isLabelEnabled = true,
+    this.textFieldLabel,
     this.inputformet,
   })  : _keyboardType = keyboardType,
         _inputAction = inputAction,
@@ -43,6 +44,7 @@ class CustomFormField extends StatelessWidget {
   final TextInputType _keyboardType;
   final TextInputAction _inputAction;
   final String _hint;
+  final String? textFieldLabel;
   bool isObscure;
   final double? height;
   final bool isCapitalized;
@@ -62,74 +64,91 @@ class CustomFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    return TextFormField(
-      controller: _controller,
-      // inputFormatters: [
-      //   FilteringTextInputFormatter.allow(RegExp(filteringRegex!)),
-      //   LengthLimitingTextInputFormatter(maxLimits),
-      // ],
-      autovalidateMode: AutovalidateMode.onUserInteraction,
-      style:  TextStyle(color: isDarkMode ? AppColors.textWhiteColor : AppColors.textFieldTextColor),
-      maxLines: maxLines,
-      enabled: isEnabled,
-      keyboardType: _keyboardType,
-      obscureText: isObscure,
-      textCapitalization:
-      isCapitalized ? TextCapitalization.words : TextCapitalization.none,
-      textInputAction: _inputAction,
-      onChanged: getxController,
-      onTap: onTap,
-      onFieldSubmitted: onFieldSubmitted,
-      onSaved: onSaved,
-      validator: (value) =>
-          AuthFormValidation().formValidation(value!, _validator),
-      decoration: InputDecoration(
-          labelStyle: TextStyle(color: AppColors.textFieldTextColor),
-          suffixIcon: postIconBtn,
-          prefixIcon: prefixIcon,
-          hintText: _hint,
-          filled: true, //<-- SEE HERE
-          fillColor: isDarkMode ? AppColors.textFieldBGColor : AppColors.textWhiteColor,
-          hintStyle:  TextStyle(
-            color: Colors.grey.withOpacity(0.5),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 10.0),
+          child: Text(
+            textFieldLabel!,
+            style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                color: AppColors.titleTextColor
+            ),
           ),
-          errorStyle: TextStyle(color: AppColors.appPrimaryColor, height: height),
-          // helperStyle: const TextStyle(
-          //   color: Color(0xFF2BACE2),
-          // ),
-          focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15.0),
-              borderSide: BorderSide(
-                color: AppColors.appPrimaryColor,
-                width: 1,
+        ),
+        SizedBox(height: 6),
+        TextFormField(
+          controller: _controller,
+          // inputFormatters: [
+          //   FilteringTextInputFormatter.allow(RegExp(filteringRegex!)),
+          //   LengthLimitingTextInputFormatter(maxLimits),
+          // ],
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          style:  TextStyle(color: isDarkMode ? AppColors.textWhiteColor : AppColors.textFieldTextColor),
+          maxLines: maxLines,
+          enabled: isEnabled,
+          keyboardType: _keyboardType,
+          obscureText: isObscure,
+          textCapitalization:
+          isCapitalized ? TextCapitalization.words : TextCapitalization.none,
+          textInputAction: _inputAction,
+          onChanged: getxController,
+          onTap: onTap,
+          onFieldSubmitted: onFieldSubmitted,
+          onSaved: onSaved,
+          validator: (value) =>
+              AuthFormValidation().formValidation(value!, _validator),
+          decoration: InputDecoration(
+              labelStyle: TextStyle(color: AppColors.textFieldTextColor),
+              suffixIcon: postIconBtn,
+              prefixIcon: prefixIcon,
+              hintText: _hint,
+              filled: true, //<-- SEE HERE
+              fillColor: isDarkMode ? AppColors.textFieldBGColor : AppColors.textWhiteColor,
+              hintStyle:  TextStyle(
+                color: Colors.grey.withOpacity(0.5),
+              ),
+              errorStyle: TextStyle(color: AppColors.appPrimaryColor, height: height),
+              // helperStyle: const TextStyle(
+              //   color: Color(0xFF2BACE2),
+              // ),
+              focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                  borderSide: BorderSide(
+                    color: AppColors.appPrimaryColor,
+                    width: 1,
+                  )),
+              contentPadding: const EdgeInsets.fromLTRB(18.0, 22.0, 0.0, 22.0),
+              disabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15.0),
+                borderSide:  BorderSide(
+                  color: AppColors.appPrimaryColor,
+                ),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15.0),
+                borderSide: BorderSide(
+                  color: isDarkMode ? AppColors.textFieldBGColor : AppColors.textWhiteColor,
+                ),
+              ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15.0),
+                borderSide:  BorderSide(
+                  color: AppColors.appPrimaryColor,
+                  width: 1,
+                ),
+              ),
+              focusedErrorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15.0),
+                borderSide: BorderSide(
+                  color: AppColors.appPrimaryColor,
+                  width: 1,
+                ),
               )),
-          contentPadding: const EdgeInsets.fromLTRB(18.0, 22.0, 0.0, 22.0),
-          disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15.0),
-            borderSide:  BorderSide(
-              color: AppColors.appPrimaryColor,
-            ),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15.0),
-            borderSide: BorderSide(
-              color: isDarkMode ? AppColors.textFieldBGColor : AppColors.textWhiteColor,
-            ),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15.0),
-            borderSide:  BorderSide(
-              color: AppColors.appPrimaryColor,
-              width: 1,
-            ),
-          ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15.0),
-            borderSide: BorderSide(
-              color: AppColors.appPrimaryColor,
-              width: 1,
-            ),
-          )),
+        ),
+      ],
     );
   }
 }

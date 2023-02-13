@@ -12,8 +12,12 @@ class AppColors {
   static Color titleTextColor = const Color(0xFF6E6A7C);
   static Color textFieldBGColor = const Color(0xFF242C42);
   static Color textRedColor = const Color(0xFFBC1006);
+  static Color textTitleColor = const Color(0xFF384156);
+  static Color iconBgColor = const Color(0xFFEBF2FF);
   static Gradient appBgColor = const LinearGradient(
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
       colors: [Color(0xFFFFFFFF), Color(0xFFECECEC)]);
+  static Gradient appBgColor2 = const LinearGradient(
+      colors: [Color(0xFFFFFFFF), Color(0xFFF6F5F5)]);
 }

@@ -15,7 +15,7 @@ class CustomButton extends StatelessWidget {
   final EdgeInsetsGeometry? contentPadding;
   @override
   Widget build(BuildContext context) {
-    return customElevatedButton();
+    return customElevatedButton(context);
   }
 
    Widget customButton(BuildContext context) {
@@ -40,18 +40,19 @@ class CustomButton extends StatelessWidget {
       );
     }
 
-   Widget customElevatedButton() {
-    return ElevatedButton(
-          onPressed: onTap,
-          style: ElevatedButton.styleFrom(
-            elevation: 4.0,
-            primary: AppColors.appPrimaryColor,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
+   Widget customElevatedButton(BuildContext context) {
+    return SizedBox(
+      height: 55,
+      width: MediaQuery.of(context).size.width / 1.1,
+      child: ElevatedButton(
+            onPressed: onTap,
+            style: ElevatedButton.styleFrom(
+              elevation: 4.0,
+              primary: AppColors.appPrimaryColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
             ),
-          ),
-          child: Padding(
-            padding: contentPadding!,
             child: Text(
               buttonText!,
               style: TextStyle(
@@ -59,7 +60,7 @@ class CustomButton extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                   color: AppColors.textWhiteColor
               ),
-            ),
-          ));
+            )),
+    );
     }
 }

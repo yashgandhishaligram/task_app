@@ -21,5 +21,10 @@ class AppImages {
   static const String eyeCloseLightLogo = "assets/svg/eye_close_light_icon.svg";
   static const String eyeOpenLightLogo = "assets/svg/eye_open_light_icon.svg";
   static const String eyeOpenDarkLogo = "assets/svg/eye_open_dark_icon.svg";
-
+  static const String forgetPasswordLogo = "assets/svg/forget_password_icon.svg";
+  static const String newPasswordLogo = "assets/svg/new_password_icon.svg";
+  static const String verifyEmailLogo = "assets/svg/verify_email_icon.svg";
+  static const String verifyEmailDarkLogo = "assets/svg/verify_email_dark_icon.svg";
+  static const String forgetPasswordDarkLogo = "assets/svg/forget_password_dark_icon.svg";
+  static const String newPasswordDarkLogo = "assets/svg/new_password_dark_icon.svg";
 }
