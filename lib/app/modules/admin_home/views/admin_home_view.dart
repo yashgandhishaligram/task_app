@@ -96,7 +96,7 @@ class AdminHomeView extends GetView<AdminHomeController> {
                       height: 177,
                       width: MediaQuery.of(context).size.width - 2.0,
                       decoration: BoxDecoration(
-                        color: AppColors.textWhiteColor,
+                        color: isDarkMode? AppColors.textFieldBGColor :AppColors.textWhiteColor,
                         borderRadius: BorderRadius.circular(15.0)
                       ),
                       child: Padding(
@@ -106,9 +106,9 @@ class AdminHomeView extends GetView<AdminHomeController> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                fieldText("Start Date", "1st Sep, 2022"),
+                                fieldText("Start Date", "1st Sep, 2022",context),
                                 Spacer(),
-                                fieldText("Project Name", "Supplox"),
+                                fieldText("Project Name", "Supplox",context),
                                 Spacer(),
                                 priorityWidget("High")
                               ],
@@ -117,9 +117,9 @@ class AdminHomeView extends GetView<AdminHomeController> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                fieldText("Est. End Date", "31st Dec, 2022s"),
+                                fieldText("Est. End Date", "31st Dec, 2022s",context),
                                 Spacer(),
-                                fieldText("Description", "Wire-Frame Design"),
+                                fieldText("Description", "Wire-Frame Design",context),
                                 Spacer(),
                                 priorityWidget("Low")
                               ],
@@ -139,7 +139,8 @@ class AdminHomeView extends GetView<AdminHomeController> {
     );
   }
 
-  Widget fieldText(String title,String value) {
+  Widget fieldText(String title,String value, BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -147,7 +148,7 @@ class AdminHomeView extends GetView<AdminHomeController> {
         style: TextStyle(
             fontSize: 10,
           fontWeight: FontWeight.w400,
-          color: AppColors.titleTextColor
+          color:  AppColors.titleTextColor
         ),),
         SizedBox(
           height: 3,
@@ -156,7 +157,7 @@ class AdminHomeView extends GetView<AdminHomeController> {
           style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w400,
-              color: AppColors.textFieldTextColor
+              color:  isDarkMode? AppColors.textWhiteColor :AppColors.textFieldTextColor
           ),)
       ],
     );
