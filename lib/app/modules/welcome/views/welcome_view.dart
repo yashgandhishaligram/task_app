@@ -18,80 +18,144 @@ class WelcomeView extends GetView<WelcomeController> {
       body: SingleChildScrollView(
        // physics: const NeverScrollableScrollPhysics(),
         padding: const EdgeInsets.only(top: 80.0),
-        child: Column(
-          children: [
-            Align(
-              alignment: Alignment.topLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 24.0),
-                child: Container(
-                    height: 77,
-                    width: 250,
-                    child:
-                    Image.asset(
-                      isDarkMode?
-                      AppImages.appLogoDarkPNG:
-                        AppImages.appLogoLightPNG,
-                    )
-                ),
+        child: Center(
+          child: Column(
+            children: [
+              SizedBox(
+                  height: 50,
+                  width: 160,
+                  child:
+                  Image.asset(
+                    isDarkMode?
+                    AppImages.appLogoDarkPNG:
+                    AppImages.appLogoLightPNG,
+                  )
               ),
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Container(
-                height: 300,
-                width: 284,
-                child: Image.asset(AppImages.centerLogo),
+              SizedBox(
+                height: 50,
               ),
-            ),
-            SizedBox(
-              height: 35,
-            ),
-            Stack(
-              children: [
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Container(
-                    height: 248,
-                    width: 291,
-                    child: Image.asset(
-                      isDarkMode? AppImages.bottomLogoDark:
-                      AppImages.bottomLogoLight,
-                    ),
-                  ),
+              Container(
+                height: 130,
+                width: 130,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100.0),
+                  border: Border.all(color: AppColors.imageBorderColor,width: 6.0)
                 ),
-                Column(
+                child: Stack(
                   children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 29.0,right:19),
-                        child: Text(
-                          "Convenient and productive task management!",
-                          style: TextStyle(
-                            fontSize: 32,
-                            color: isDarkMode? AppColors.textWhiteColor : AppColors.textColor,
-                            fontWeight: FontWeight.w600
-                          ),
-                        ),
-                      ),
-                    SizedBox(
-                      height: 24,
+                    CircleAvatar(
+                      backgroundImage: AssetImage(AppImages.profilePic),
+                      radius: 100,
                     ),
-                    CustomButton(
-                      onTap: () {
-                          // Get.offAndToNamed(Routes.HOME);
-                        Get.toNamed(Routes.LOGIN);
-                      },
-                      buttonText: "Get Started",
-                      btnBGColor: AppColors.appPrimaryColor,
+                    Positioned(
+                      bottom: 0.0,
+                      right: 0.0,
+                      child: Container(
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(100.0),
+                            border: Border.all(color: AppColors.textWhiteColor,width: 3.0),
+                            color: AppColors.appPrimaryColor
+                        ),
+                        child: Center(child: SvgPicture.asset(AppImages.userEditIcon))
+                      ),
                     )
                   ],
                 )
-              ],
-            )
-          ],
+              ),
+              SizedBox(
+                height: 24,
+              ),
+              Text(
+                "Welcome",
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.w300,
+                  color: AppColors.textHighlightColor
+                ),
+              ),
+              SizedBox(
+                height: 34,
+              ),
+              Text(
+                "Felipe Magaña",
+                style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w500,
+                    color: isDarkMode? AppColors.textWhiteColor : AppColors.textTitleColor
+                ),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Text(
+                "(" +  "Project Head" + ")",
+                style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.appPrimaryColor
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Text(
+                "Have a nice day !",
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                    color: isDarkMode? AppColors.textWhiteColor : AppColors.wishTextColor
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.bottomLeft,
+                    child: SizedBox(
+                      height: 248,
+                      width: 291,
+                      child: Image.asset(
+                        isDarkMode? AppImages.bottomLogoDark:
+                        AppImages.bottomLogoLight,
+                      ),
+                    ),
+                  ),
+                Align(
+                  alignment: Alignment.center,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 20,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed(Routes.ADMIN_HOME);
+                        },
+                        child: Container(
+                            height: 48,
+                            width: 48,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(70.0),
+                              color: AppColors.appPrimaryColor,
+                              border: Border.all(color: AppColors.imageBorderColor.withOpacity(0.8), width: 2.0)
+                          ),
+                          child: Center(
+                              child: SvgPicture.asset(
+                                AppImages.arrowRightIcon,
+                              )),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+                ],
+              )
+            ],
+          ),
         ),
       )
     );

@@ -1,10 +1,14 @@
 import 'package:get/get.dart';
 
-class WelcomeController extends GetxController {
+class AdminHomeController extends GetxController {
+
+  var isChecked = false.obs;
 
   @override
   void onInit() {
     super.onInit();
   }
+
+
 
 }

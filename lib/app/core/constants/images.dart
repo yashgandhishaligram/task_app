@@ -27,4 +27,15 @@ class AppImages {
   static const String verifyEmailDarkLogo = "assets/svg/verify_email_dark_icon.svg";
   static const String forgetPasswordDarkLogo = "assets/svg/forget_password_dark_icon.svg";
   static const String newPasswordDarkLogo = "assets/svg/new_password_dark_icon.svg";
+  static const String welcomeLogo = "assets/svg/welcome_logo.svg";
+  static const String profilePic = "assets/images/profile_pic.png";
+  static const String profilePic2 = "assets/images/profile_pic2.png";
+  static const String arrowRightIcon = "assets/svg/arrow-right.svg";
+  static const String userEditIcon = "assets/svg/user_edit_icon.svg";
+  static const String filterLightIcon = "assets/svg/filter_light_icon.svg";
+  static const String filterDarkIcon = "assets/svg/filter_dark_icon.svg";
+  static const String notificationLightIcon = "assets/svg/notification_light_icon.svg";
+  static const String notificationDarkIcon = "assets/svg/notification_dark_icon.svg";
+  static const String noteLightIcon = "assets/svg/note_light_icon.svg";
+  static const String noteDarkIcon = "assets/svg/note_dark_icon.svg";
 }

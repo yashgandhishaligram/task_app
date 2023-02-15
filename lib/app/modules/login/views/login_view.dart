@@ -146,7 +146,7 @@ class LoginView extends GetView<LoginController> {
                  Padding(
                    padding: EdgeInsets.fromLTRB(22.0,isDarkMode ? 80.0 : 51.0,22.0,30.0),
                    child: CustomButton(onTap: () {
-                      Get.toNamed(Routes.FORGET_PASSWORD);
+                      Get.toNamed(Routes.WELCOME);
                    },
                      buttonText: "Login",
                      btnBGColor: AppColors.appPrimaryColor,),

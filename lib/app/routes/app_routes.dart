@@ -10,6 +10,8 @@ abstract class Routes {
   static const FORGET_PASSWORD = _Paths.FORGET_PASSWORD;
   static const VERIFY_EMAIL = _Paths.VERIFY_EMAIL;
   static const RESET_PASSWORD = _Paths.RESET_PASSWORD;
+  static const SPLASH = _Paths.SPLASH;
+  static const ADMIN_HOME = _Paths.ADMIN_HOME;
 }
 
 abstract class _Paths {
@@ -19,4 +21,6 @@ abstract class _Paths {
   static const FORGET_PASSWORD = '/forget-password';
   static const VERIFY_EMAIL = '/verify-email';
   static const RESET_PASSWORD = '/reset-password';
+  static const SPLASH = '/splash';
+  static const ADMIN_HOME = '/admin-home';
 }

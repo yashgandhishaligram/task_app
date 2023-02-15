@@ -1,11 +1,15 @@
 import 'package:get/get.dart';
 
+import 'package:task_app/app/modules/admin_home/bindings/admin_home_binding.dart';
+import 'package:task_app/app/modules/admin_home/views/admin_home_view.dart';
 import 'package:task_app/app/modules/home/bindings/home_binding.dart';
 import 'package:task_app/app/modules/home/views/home_view.dart';
 import 'package:task_app/app/modules/login/bindings/login_binding.dart';
 import 'package:task_app/app/modules/login/views/login_view.dart';
 import 'package:task_app/app/modules/reset_password/bindings/reset_password_binding.dart';
 import 'package:task_app/app/modules/reset_password/views/reset_password_view.dart';
+import 'package:task_app/app/modules/splash/bindings/splash_binding.dart';
+import 'package:task_app/app/modules/splash/views/splash_view.dart';
 import 'package:task_app/app/modules/verify_email/bindings/verify_email_binding.dart';
 import 'package:task_app/app/modules/verify_email/views/verify_email_view.dart';
 import 'package:task_app/app/modules/welcome/bindings/welcome_binding.dart';
@@ -19,7 +23,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.WELCOME;
+  static const INITIAL = Routes.SPLASH;
 
   static final routes = [
     GetPage(
@@ -51,6 +55,16 @@ class AppPages {
       name: _Paths.RESET_PASSWORD,
       page: () => ResetPasswordView(),
       binding: ResetPasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.SPLASH,
+      page: () => SplashView(),
+      binding: SplashBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADMIN_HOME,
+      page: () => AdminHomeView(),
+      binding: AdminHomeBinding(),
     ),
   ];
 }
