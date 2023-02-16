@@ -38,4 +38,8 @@ class AppImages {
   static const String notificationDarkIcon = "assets/svg/notification_dark_icon.svg";
   static const String noteLightIcon = "assets/svg/note_light_icon.svg";
   static const String noteDarkIcon = "assets/svg/note_dark_icon.svg";
+  static const String profileFemaleSvg = "assets/svg/profile_female.svg";
+  static const String profileFemalePNG = "assets/images/profile_female.png";
+  static const String closeDarkIcon = "assets/svg/close_dark_icon.svg";
+  static const String closeLightIcon = "assets/svg/close_light_icon.svg";
 }

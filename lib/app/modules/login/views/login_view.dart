@@ -10,6 +10,7 @@ import '../../../routes/app_pages.dart';
 import '../../../widget/custom_checkbox.dart';
 import '../../../widget/custom_textfield.dart';
 import '../controllers/login_controller.dart';
+import 'package:sizer/sizer.dart';
 
 class LoginView extends GetView<LoginController> {
   @override
@@ -23,11 +24,11 @@ class LoginView extends GetView<LoginController> {
         child: Scaffold(
            backgroundColor: isDarkMode? AppColors.darkBgColor : Colors.transparent,
           body: SingleChildScrollView(
-            padding: const EdgeInsets.only(top:100),
+            padding:  EdgeInsets.only(top:11.h),
          child: Column(
            children: [
              Padding(
-               padding: const EdgeInsets.only(left: 22.0,right: 22.0),
+               padding:  EdgeInsets.only(left: 22.0,right: 22.0),
                child: Column(
                  crossAxisAlignment: CrossAxisAlignment.start,
                  children: [
@@ -100,7 +101,7 @@ class LoginView extends GetView<LoginController> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                      children: [
                        Padding(
-                         padding: const EdgeInsets.only(left: 6.0),
+                         padding:  EdgeInsets.only(left: 6.0),
                          child: Row(
                            children: [
                              CustomCheckBox(
@@ -129,7 +130,7 @@ class LoginView extends GetView<LoginController> {
                  ],
                ),
              ),
-             const SizedBox(height: 8),
+              SizedBox(height: 2.h),
              Stack(
                children: [
                  Align(
@@ -144,7 +145,7 @@ class LoginView extends GetView<LoginController> {
                    ),
                  ),
                  Padding(
-                   padding: EdgeInsets.fromLTRB(22.0,isDarkMode ? 80.0 : 51.0,22.0,30.0),
+                   padding: EdgeInsets.fromLTRB(22.0,isDarkMode ? 80.0 : 51,22.0,30.0),
                    child: CustomButton(onTap: () {
                       Get.toNamed(Routes.WELCOME);
                    },

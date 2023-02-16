@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 import 'package:task_app/app/core/constants/images.dart';
 import 'package:task_app/app/core/theme/colors.dart';
 import 'package:task_app/app/routes/app_pages.dart';
@@ -17,7 +18,7 @@ class WelcomeView extends GetView<WelcomeController> {
       backgroundColor: isDarkMode? AppColors.darkBgColor : AppColors.textWhiteColor,
       body: SingleChildScrollView(
        // physics: const NeverScrollableScrollPhysics(),
-        padding: const EdgeInsets.only(top: 80.0),
+        padding:  EdgeInsets.only(top: 10.h),
         child: Center(
           child: Column(
             children: [
@@ -87,7 +88,7 @@ class WelcomeView extends GetView<WelcomeController> {
                 ),
               ),
               SizedBox(
-                height: 5,
+                height: 5.h,
               ),
               Text(
                 "(" +  "Project Head" + ")",

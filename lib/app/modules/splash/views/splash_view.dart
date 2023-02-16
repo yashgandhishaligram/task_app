@@ -17,16 +17,16 @@ class SplashView extends GetView<SplashController> {
         backgroundColor: isDarkMode? AppColors.darkBgColor : AppColors.textWhiteColor,
         body: SingleChildScrollView(
           // physics: const NeverScrollableScrollPhysics(),
-          padding:  EdgeInsets.only(top: 80.0),
+          padding:  EdgeInsets.only(top: 8.0.h),
           child: Column(
             children: [
               Align(
                 alignment: Alignment.topLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 24.0),
+                  padding:  EdgeInsets.only(left: 4.0.h),
                   child: SizedBox(
-                      height: 77,
-                      width: 250,
+                      height: 9.h,
+                      width: 28.h,
                       child:
                       Image.asset(
                         isDarkMode?
@@ -37,7 +37,7 @@ class SplashView extends GetView<SplashController> {
                 ),
               ),
               SizedBox(
-                height: 50,
+                height: 5.h,
               ),
               Align(
                 alignment: Alignment.centerRight,
@@ -48,7 +48,7 @@ class SplashView extends GetView<SplashController> {
                 ),
               ),
               SizedBox(
-                height: 35,
+                height: 8.h,
               ),
               Stack(
                 children: [
@@ -66,18 +66,18 @@ class SplashView extends GetView<SplashController> {
                   Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 29.0,right:19),
+                        padding:  EdgeInsets.only(left: 29.0,right:19),
                         child: Text(
                           "Convenient and productive task management!",
                           style: TextStyle(
-                              fontSize: 32,
+                              fontSize: 26.sp,
                               color: isDarkMode? AppColors.textWhiteColor : AppColors.textColor,
                               fontWeight: FontWeight.w600
                           ),
                         ),
                       ),
                       SizedBox(
-                        height: 24,
+                        height: 5.h,
                       ),
                       CustomButton(
                         onTap: () {

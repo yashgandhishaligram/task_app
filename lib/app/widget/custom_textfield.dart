@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:task_app/app/core/theme/colors.dart';
 
 import '../core/validations/auth_form_velidation.dart';
+import 'package:sizer/sizer.dart';
 
 class CustomFormField extends StatelessWidget {
   CustomFormField({
@@ -68,11 +69,11 @@ class CustomFormField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 10.0),
+          padding:  EdgeInsets.only(left: 10.0),
           child: Text(
             textFieldLabel!,
             style: TextStyle(
-                fontSize: 14,
+                fontSize: 14.sp,
                 fontWeight: FontWeight.w500,
                 color: AppColors.titleTextColor
             ),
@@ -120,7 +121,7 @@ class CustomFormField extends StatelessWidget {
                     color: AppColors.appPrimaryColor,
                     width: 1,
                   )),
-              contentPadding: const EdgeInsets.fromLTRB(18.0, 22.0, 0.0, 22.0),
+              contentPadding:  EdgeInsets.fromLTRB(18.0, 22.0, 0.0, 22.0),
               disabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15.0),
                 borderSide:  BorderSide(
