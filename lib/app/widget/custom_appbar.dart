@@ -5,8 +5,8 @@ import '../core/constants/images.dart';
 import '../core/theme/colors.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  CustomAppBar({Key? key}) : super(key: key);
-
+  CustomAppBar({Key? key,this.bottom}) : super(key: key);
+  PreferredSizeWidget? bottom;
   @override
   Widget build(BuildContext context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
@@ -53,6 +53,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           height: 30,
           width: 100),
       centerTitle: true,
+      bottom: bottom,
       actions: [
         SvgPicture.asset(
             isDarkMode ? AppImages.filterDarkIcon : AppImages.filterLightIcon),

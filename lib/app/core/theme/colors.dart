@@ -27,6 +27,7 @@ class AppColors {
   static Color dividerDarkColor = const Color(0xFF6C6F7E);
   static Color redPriorityColor = const Color(0xFFE96161);
   static Color greenPriorityColor = const Color(0xFF61E98F).withOpacity(0.10);
+  static Color appDarkBgColor = const Color(0xFF080F1E);
  // static Color appBarBGColor2 = const Color(0xFFF1F2F3);
   static Gradient appBgColor = const LinearGradient(
       begin: Alignment.topCenter,
