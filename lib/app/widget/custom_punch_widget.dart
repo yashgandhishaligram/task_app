@@ -90,12 +90,20 @@ class  CustomPunchWidget extends StatelessWidget implements PreferredSizeWidget 
                   const SizedBox(width: 13),
                   InkWell(
                     onTap: () {},
-                    child: SvgPicture.asset(
-                      isDarkMode
-                          ? AppImages.noteDarkIcon
-                          : AppImages.noteLightIcon,
+                    child: Container(
                       height: 20,
                       width: 20,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4.0),
+                        color: isDarkMode? AppColors.toggleDarkBGColor : AppColors.iconBGColor,
+                      ),
+                      child: SvgPicture.asset(
+                        isDarkMode
+                            ? AppImages.noteDarkIcon
+                            : AppImages.noteLightIcon,
+                        height: 18,
+                        width: 18,
+                      ),
                     ),
                   )
                 ],
