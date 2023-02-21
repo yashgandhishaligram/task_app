@@ -31,6 +31,7 @@ class AppColors {
   static Color appBarBGColor2 = const Color(0xFFF2ECEC);
   static Color tabSelectedColor = const Color(0xFFF2ECEC);
   static Color tabColor = const Color(0xFFA9ABAD);
+  static Color iconBGColor = const Color(0xFFF0F0FE);
   static Gradient appBgColor = const LinearGradient(
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
