@@ -35,16 +35,16 @@ class CustomSwitchWidget extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(60.0),
                     color: isDarkMode
-                        ? controller!.isChecked.value
+                        ? controller!.isPunchOut.value
                             ? AppColors.toggleLightBGColor
                             : AppColors.toggleDarkBGColor
-                        : !controller!.isChecked.value
+                        : !controller!.isPunchOut.value
                             ? AppColors.toggleLightBGColor
                             : AppColors.toggleDarkBGColor,
                   ),
                   child: AnimatedAlign(
                     duration: const Duration(milliseconds: 300),
-                    alignment: controller!.isChecked.value
+                    alignment: controller!.isPunchOut.value
                         ? Alignment.centerRight
                         : Alignment.centerLeft,
                     curve: Curves.decelerate,
@@ -60,9 +60,9 @@ class CustomSwitchWidget extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  controller!.isChecked.value =
-                      !controller!.isChecked.value;
-                  onChanged!(controller!.isChecked.value);
+                  controller!.isPunchOut.value =
+                      !controller!.isPunchOut.value;
+                  onChanged!(controller!.isPunchOut.value);
                 }),
           ],
         ),

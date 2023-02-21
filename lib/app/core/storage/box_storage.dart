@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:get_storage/get_storage.dart';
 
 class GetStorageHelper {
@@ -10,6 +12,7 @@ class GetStorageHelper {
   static const String password = "Yg@12345";
   static const String punchInTime = "PUNCHINTIME";
   static const String punchOutTime = "PUNCHOUTTIME";
+  static const String isPunchOUT = "ISPUNCHOUT";
   GetStorage box = GetStorage();
 
   GetStorageHelper._internal();
@@ -34,6 +37,15 @@ class GetStorageHelper {
   String? getPunchOutTime() {
     final credentials = box.read(punchOutTime);
     return credentials;
+  }
+
+  Future<void> isPunchOut(bool value) async {
+    await box.write(isPunchOUT, value);
+  }
+
+  bool? getIsPunchOut() {
+    var isPunchOut = box.read(isPunchOUT);
+    return isPunchOut;
   }
 
   List? getUserCredentials() {
