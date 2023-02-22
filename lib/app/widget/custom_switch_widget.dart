@@ -37,10 +37,10 @@ class CustomSwitchWidget extends StatelessWidget {
                     color: isDarkMode
                         ? controller!.isPunchOut.value
                             ? AppColors.toggleLightBGColor
-                            : AppColors.toggleDarkBGColor
+                            : AppColors.toggleLightBGColor
                         : !controller!.isPunchOut.value
                             ? AppColors.toggleLightBGColor
-                            : AppColors.toggleDarkBGColor,
+                            : AppColors.toggleLightBGColor,
                   ),
                   child: AnimatedAlign(
                     duration: const Duration(milliseconds: 300),

@@ -43,4 +43,5 @@ class AppImages {
   static const String closeDarkIcon = "assets/svg/close_dark_icon.svg";
   static const String closeLightIcon = "assets/svg/close_light_icon.svg";
   static const String plusIcon = "assets/svg/plus_icon.svg";
+  static const String pdfIconSVG = "assets/svg/pdf_icon.svg";
 }

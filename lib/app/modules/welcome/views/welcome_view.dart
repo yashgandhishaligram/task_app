@@ -134,7 +134,7 @@ class WelcomeView extends GetView<WelcomeController> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Get.toNamed(Routes.ADMIN_HOME);
+                          Get.toNamed(Routes.EMPLOYEE_HOME);
                         },
                         child: Container(
                             height: 48,

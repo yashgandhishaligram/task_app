@@ -13,6 +13,7 @@ import 'package:sizer/sizer.dart';
 class  CustomPunchWidget extends StatelessWidget implements PreferredSizeWidget {
   CustomPunchWidget({Key? key,required this.controller}) : super(key: key);
   AdminHomeController controller;
+
   @override
   Widget build(BuildContext context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
@@ -126,7 +127,6 @@ class  CustomPunchWidget extends StatelessWidget implements PreferredSizeWidget 
     );
   }
 
-
   confirmPunch(context, String punchIn, String punchOut) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     final currentTime = DateFormat("hh:mm a").format(DateTime.now());
@@ -218,7 +218,7 @@ class  CustomPunchWidget extends StatelessWidget implements PreferredSizeWidget 
         });
   }
 
-
   @override
   Size get preferredSize => const Size.fromHeight(50);
+
 }

@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import 'package:task_app/app/modules/admin_home/bindings/admin_home_binding.dart';
 import 'package:task_app/app/modules/admin_home/views/admin_home_view.dart';
+import 'package:task_app/app/modules/employee_home/bindings/employee_home_binding.dart';
+import 'package:task_app/app/modules/employee_home/views/employee_home_view.dart';
 import 'package:task_app/app/modules/home/bindings/home_binding.dart';
 import 'package:task_app/app/modules/home/views/home_view.dart';
 import 'package:task_app/app/modules/login/bindings/login_binding.dart';
@@ -65,6 +67,11 @@ class AppPages {
       name: _Paths.ADMIN_HOME,
       page: () => AdminHomeView(),
       binding: AdminHomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.EMPLOYEE_HOME,
+      page: () => EmployeeHomeView(),
+      binding: EmployeeHomeBinding(),
     ),
   ];
 }
