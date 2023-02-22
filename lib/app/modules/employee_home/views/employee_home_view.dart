@@ -132,15 +132,17 @@ class EmployeeHomeView extends GetView<EmployeeHomeController> {
                   ),
                   SliverPersistentHeader(
                     delegate: _SliverAppBarDelegate(
-                      Container(
-                        height: 14.h,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                          gradient: isDarkMode
-                          ? AppColors.cardBgDarkColor
-                          : AppColors.cardBgLightColor2,
+                      Expanded(
+                        child: Container(
+                          height: 20.h,
+                          width: MediaQuery.of(context).size.width,
+                          decoration: BoxDecoration(
+                            gradient: isDarkMode
+                            ? AppColors.cardBgDarkColor
+                            : AppColors.cardBgLightColor2,
+                          ),
+                          child:  CustomWeekCalender(),
                         ),
-                        child:  CustomWeekCalender(),
                       ),
                       TabBar(
                         controller: controller.tabController,
