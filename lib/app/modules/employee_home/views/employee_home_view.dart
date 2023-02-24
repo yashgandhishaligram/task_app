@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import '../../../core/constants/images.dart';
 import '../../../core/theme/colors.dart';
+import '../../../routes/app_pages.dart';
 import '../../../widget/custom_week_calender.dart';
 import '../../../widget/custom_punch_widget.dart';
 import '../../admin_home/controllers/admin_home_controller.dart';
@@ -17,7 +18,7 @@ class EmployeeHomeView extends GetView<EmployeeHomeController> {
     return Container(
         decoration: BoxDecoration(
             gradient:
-            isDarkMode ? AppColors.appBgDarkColor : AppColors.appBgColor2),
+                isDarkMode ? AppColors.appBgDarkColor : AppColors.appBgColor2),
         child: Scaffold(
           backgroundColor: isDarkMode
               ? AppColors.darkBgColor.withOpacity(0.1)
@@ -42,7 +43,8 @@ class EmployeeHomeView extends GetView<EmployeeHomeController> {
           body: DefaultTabController(
             length: 2,
             child: NestedScrollView(
-              headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+              headerSliverBuilder:
+                  (BuildContext context, bool innerBoxIsScrolled) {
                 return <Widget>[
                   SliverAppBar(
                     automaticallyImplyLeading: false,
@@ -138,17 +140,21 @@ class EmployeeHomeView extends GetView<EmployeeHomeController> {
                           width: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(
                             gradient: isDarkMode
-                            ? AppColors.cardBgDarkColor
-                            : AppColors.cardBgLightColor2,
+                                ? AppColors.cardBgDarkColor
+                                : AppColors.cardBgLightColor2,
                           ),
-                          child:  CustomWeekCalender(),
+                          child: CustomWeekCalender(),
                         ),
                       ),
                       TabBar(
                         controller: controller.tabController,
                         tabs: controller.tabList,
-                        unselectedLabelColor: isDarkMode? AppColors.titleTextColor : AppColors.tabColor,
-                        labelColor: isDarkMode?AppColors.textWhiteColor: AppColors.textTitleColor,
+                        unselectedLabelColor: isDarkMode
+                            ? AppColors.titleTextColor
+                            : AppColors.tabColor,
+                        labelColor: isDarkMode
+                            ? AppColors.textWhiteColor
+                            : AppColors.textTitleColor,
                         indicatorColor: Colors.transparent,
                         labelStyle: const TextStyle(
                           fontSize: 14,
@@ -156,7 +162,7 @@ class EmployeeHomeView extends GetView<EmployeeHomeController> {
                         ),
                       ),
                     ),
-                        pinned: true,
+                    pinned: true,
                   ),
                 ];
               },
@@ -169,8 +175,7 @@ class EmployeeHomeView extends GetView<EmployeeHomeController> {
               ),
             ),
           ),
-        )
-    );
+        ));
   }
 
   Widget tabView(context) {
@@ -187,7 +192,11 @@ class EmployeeHomeView extends GetView<EmployeeHomeController> {
           padding: EdgeInsets.only(top: 0.0),
           physics: NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
-            return cardView(context);
+            return GestureDetector(
+                onTap: () {
+                  Get.toNamed(Routes.TASK_DETAILS);
+                },
+                child: cardView(context));
           }),
     );
   }
@@ -204,43 +213,43 @@ class EmployeeHomeView extends GetView<EmployeeHomeController> {
               : AppColors.textWhiteColor,
           borderRadius: BorderRadius.circular(15.0)),
       child: Padding(
-        padding: const EdgeInsets.only(
-            top: 15.0, bottom: 15.0, left: 18.0, right: 25.0),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                fieldText("Date", "21st Dec, 2022", context),
-                Spacer(),
-                fieldText("Time", "11:17 AM", context),
-              ],
-            ),
-            Spacer(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                fieldText("Project Name", "Supplox  Inventory Management", context),
-              ],
-            ),
-            Spacer(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                fieldText("Project Task", "Start Admin wire-frame design ", context),
-              ],
-            ),
-            Spacer(),
-            Row(
-              children: [
-                priorityWidget("High"),
-                Spacer(),
-                attachmentWidget("Project.pdf",context)
-              ],
-            )
-          ],
-
-        )
-      ),
+          padding: const EdgeInsets.only(
+              top: 15.0, bottom: 15.0, left: 18.0, right: 25.0),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  fieldText("Date", "21st Dec, 2022", context),
+                  Spacer(),
+                  fieldText("Time", "11:17 AM", context),
+                ],
+              ),
+              Spacer(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  fieldText(
+                      "Project Name", "Supplox  Inventory Management", context),
+                ],
+              ),
+              Spacer(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  fieldText("Project Task", "Start Admin wire-frame design ",
+                      context),
+                ],
+              ),
+              Spacer(),
+              Row(
+                children: [
+                  priorityWidget("High"),
+                  Spacer(),
+                  attachmentWidget("Project.pdf", context)
+                ],
+              )
+            ],
+          )),
     );
   }
 
@@ -298,8 +307,8 @@ class EmployeeHomeView extends GetView<EmployeeHomeController> {
               color: priority == "High"
                   ? AppColors.redPriorityColor.withOpacity(0.10)
                   : priority == "Low"
-                  ? AppColors.greenPriorityColor
-                  : Colors.white),
+                      ? AppColors.greenPriorityColor
+                      : Colors.white),
           child: Center(
             child: Text(
               priority,
@@ -309,8 +318,8 @@ class EmployeeHomeView extends GetView<EmployeeHomeController> {
                   color: priority == "High"
                       ? AppColors.redPriorityColor
                       : priority == "Low"
-                      ? AppColors.toggleGreenColor
-                      : Colors.white),
+                          ? AppColors.toggleGreenColor
+                          : Colors.white),
             ),
           ),
         )
@@ -318,7 +327,7 @@ class EmployeeHomeView extends GetView<EmployeeHomeController> {
     );
   }
 
-  Widget attachmentWidget(String filename,context) {
+  Widget attachmentWidget(String filename, context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -335,25 +344,30 @@ class EmployeeHomeView extends GetView<EmployeeHomeController> {
         ),
         Row(
           children: [
-            SvgPicture.asset(AppImages.pdfIconSVG,
-            width: 14,
-            height: 18,),
+            SvgPicture.asset(
+              AppImages.pdfIconSVG,
+              width: 14,
+              height: 18,
+            ),
             SizedBox(width: 8.5),
-            Text(filename,
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w300,
-              color: isDarkMode? AppColors.textWhiteColor : AppColors.textFieldTextColor
-            ),)
+            Text(
+              filename,
+              style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w300,
+                  color: isDarkMode
+                      ? AppColors.textWhiteColor
+                      : AppColors.textFieldTextColor),
+            )
           ],
         )
       ],
     );
-}
+  }
 }
 
 class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
-  _SliverAppBarDelegate(this.widget,this._tabBar);
+  _SliverAppBarDelegate(this.widget, this._tabBar);
   final Widget widget;
   final TabBar _tabBar;
 
@@ -363,16 +377,14 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   double get maxExtent => 160.5;
 
   @override
-  Widget build(
-      context, double shrinkOffset, bool overlapsContent) {
+  Widget build(context, double shrinkOffset, bool overlapsContent) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Column(
       children: [
         widget,
         Container(
-          color: isDarkMode
-              ? AppColors.appDarkBgColor
-              : AppColors.appBarBGColor,
+          color:
+              isDarkMode ? AppColors.appDarkBgColor : AppColors.appBarBGColor,
           height: 3,
         ),
         Container(
@@ -381,7 +393,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
             gradient: isDarkMode
                 ? AppColors.cardBgDarkColor
                 : AppColors.cardBgLightColor2,
-          ),// ADD THE COLOR YOU WANT AS BACKGROUND.
+          ), // ADD THE COLOR YOU WANT AS BACKGROUND.
           child: _tabBar,
         ),
       ],
@@ -393,4 +405,3 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
     return true;
   }
 }
-

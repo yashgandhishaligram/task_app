@@ -2,16 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
 import 'package:task_app/app/widget/custom_button.dart';
 
 import '../../../core/constants/images.dart';
 import '../../../core/theme/colors.dart';
-import '../../../widget/custom_appbar.dart';
 import '../../../widget/custom_punch_widget.dart';
-import '../../../widget/custom_switch_widget.dart';
 import '../controllers/admin_home_controller.dart';
 
 class AdminHomeView extends GetView<AdminHomeController> {
@@ -338,6 +335,8 @@ class AdminHomeView extends GetView<AdminHomeController> {
         ),
         Text(
           value,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
           style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w400,

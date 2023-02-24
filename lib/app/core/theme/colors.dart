@@ -33,6 +33,14 @@ class AppColors {
   static Color tabColor = const Color(0xFFA9ABAD);
   static Color iconBGColor = const Color(0xFFF0F0FE);
   static Color calCardBGColor = const Color(0xFF0B1222);
+  static Color iconLightBGColor = const Color(0xFF0B1222);
+  static Color priorityLightCardColor1 = const Color(0xFF1DC054).withOpacity(0.1);
+  static Color priorityDarkCardColor1 = const Color(0xFFCAFFCF);
+  static Color priorityLightCardColor2 = const Color(0xFFFF8B02).withOpacity(0.1);
+  static Color priorityDarkCardColor2 = const Color(0xFFFFE1BE);
+  static Color priorityLightCardColor3 = const Color(0xFFE96161).withOpacity(0.1);
+  static Color priorityDarkCardColor3 = const Color(0xFFFFCECE);
+
   static Gradient appBgColor = const LinearGradient(
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
@@ -57,4 +65,9 @@ class AppColors {
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
       colors: [ Color(0xFFF9F9F9),Color(0xFFF9F9F9)]);
+  // static Gradient priorityCardColor =  LinearGradient(
+  //     begin: Alignment.topCenter,
+  //     end: Alignment.bottomCenter,
+  //     colors: [ Color(0xFFF9F9F9),Color(0xFFF9F9F9)]);
+
 }

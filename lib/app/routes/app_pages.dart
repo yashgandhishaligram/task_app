@@ -12,6 +12,8 @@ import 'package:task_app/app/modules/reset_password/bindings/reset_password_bind
 import 'package:task_app/app/modules/reset_password/views/reset_password_view.dart';
 import 'package:task_app/app/modules/splash/bindings/splash_binding.dart';
 import 'package:task_app/app/modules/splash/views/splash_view.dart';
+import 'package:task_app/app/modules/task_details/bindings/task_details_binding.dart';
+import 'package:task_app/app/modules/task_details/views/task_details_view.dart';
 import 'package:task_app/app/modules/verify_email/bindings/verify_email_binding.dart';
 import 'package:task_app/app/modules/verify_email/views/verify_email_view.dart';
 import 'package:task_app/app/modules/welcome/bindings/welcome_binding.dart';
@@ -72,6 +74,11 @@ class AppPages {
       name: _Paths.EMPLOYEE_HOME,
       page: () => EmployeeHomeView(),
       binding: EmployeeHomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.TASK_DETAILS,
+      page: () => TaskDetailsView(),
+      binding: TaskDetailsBinding(),
     ),
   ];
 }
