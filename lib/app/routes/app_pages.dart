@@ -8,6 +8,8 @@ import 'package:task_app/app/modules/home/bindings/home_binding.dart';
 import 'package:task_app/app/modules/home/views/home_view.dart';
 import 'package:task_app/app/modules/login/bindings/login_binding.dart';
 import 'package:task_app/app/modules/login/views/login_view.dart';
+import 'package:task_app/app/modules/profile/bindings/profile_binding.dart';
+import 'package:task_app/app/modules/profile/views/profile_view.dart';
 import 'package:task_app/app/modules/reset_password/bindings/reset_password_binding.dart';
 import 'package:task_app/app/modules/reset_password/views/reset_password_view.dart';
 import 'package:task_app/app/modules/splash/bindings/splash_binding.dart';
@@ -79,6 +81,11 @@ class AppPages {
       name: _Paths.TASK_DETAILS,
       page: () => TaskDetailsView(),
       binding: TaskDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE,
+      page: () => ProfileView(),
+      binding: ProfileBinding(),
     ),
   ];
 }

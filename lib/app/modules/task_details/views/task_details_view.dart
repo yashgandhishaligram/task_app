@@ -7,6 +7,7 @@ import 'package:sizer/sizer.dart';
 
 import '../../../core/constants/images.dart';
 import '../../../core/theme/colors.dart';
+import '../../../routes/app_pages.dart';
 import '../../../widget/custom_title_appbar.dart';
 import '../controllers/task_details_controller.dart';
 
@@ -16,8 +17,7 @@ class TaskDetailsView extends GetView<TaskDetailsController> {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Container(
         decoration: BoxDecoration(
-            gradient:
-                isDarkMode ? AppColors.appBgDarkColor : AppColors.appBgColor2),
+            gradient: isDarkMode ? AppColors.appBgDarkColor : AppColors.appBgColor2),
         child: Scaffold(
             //appBar: CustomTitleAppBar(title: "Task Details"),
             backgroundColor: isDarkMode
@@ -466,7 +466,6 @@ class TaskDetailsView extends GetView<TaskDetailsController> {
                         )
                       ):SizedBox()
                     ),
-                    // if (title != null) title,
                   ],
                 ));
           }).toList(),
@@ -760,29 +759,34 @@ class TaskDetailsView extends GetView<TaskDetailsController> {
                   int totalCount = imageList.length - 5;
                   return Stack(
                     children: [
-                      Container(
-                          height: 4.2.h,
-                          width: 4.2.h,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(100.0),
-                              border: Border.all(
-                                  width: 2.0, color: AppColors.teamBgColor1)),
-                          child: index == 5
-                              ? CircleAvatar(
-                            backgroundColor:AppColors.appPrimaryColor,
-                            child: Text(
-                              "$totalCount+",
-                              style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.textWhiteColor),
-                            ),
-                          )
-                              : CircleAvatar(
-                            backgroundImage: AssetImage(image),
-                            //child: SvgPicture.asset(image),
-                          )
-                        //:SizedBox()
+                      InkWell(
+                        onTap:() {
+                          Get.toNamed(Routes.PROFILE);
+                           },
+                        child: Container(
+                            height: 4.2.h,
+                            width: 4.2.h,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(100.0),
+                                border: Border.all(
+                                    width: 2.0, color: AppColors.teamBgColor1)),
+                            child: index == 5
+                                ? CircleAvatar(
+                              backgroundColor:AppColors.appPrimaryColor,
+                              child: Text(
+                                "$totalCount+",
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400,
+                                    color: AppColors.textWhiteColor),
+                              ),
+                            )
+                                : CircleAvatar(
+                              backgroundImage: AssetImage(image),
+                              //child: SvgPicture.asset(image),
+                            )
+                          //:SizedBox()
+                        ),
                       ),
                       Positioned(
                         top: 0.0,
