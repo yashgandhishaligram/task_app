@@ -40,7 +40,15 @@ class AppColors {
   static Color priorityDarkCardColor2 = const Color(0xFFFFE1BE);
   static Color priorityLightCardColor3 = const Color(0xFFE96161).withOpacity(0.1);
   static Color priorityDarkCardColor3 = const Color(0xFFFFCECE);
-
+  static Color checkBoxBorderColor = const Color(0xFF292D32);
+  static Color checkBoxItemColor1 = const Color(0xFF1DC054);
+  static Color checkBoxItemColor2 = const Color(0xFFFF8B02);
+  static Color checkBoxItemColor3 = const Color(0xFFE96161);
+  static Color timelineBgColor = const Color(0xFFF2F2F2);
+  static Color teamBgColor1 = const Color(0xFFE5DDFF);
+  static Color teamBgColor2 = const Color(0xFFFFCC00).withOpacity(0.3);
+  static Color teamBgColor3 = const Color(0xFFCAFFCF);
+  static Color teamDarkBgColor2 = const Color(0xFFFFF3C1);
   static Gradient appBgColor = const LinearGradient(
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
