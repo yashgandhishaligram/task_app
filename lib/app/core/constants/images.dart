@@ -47,4 +47,17 @@ class AppImages {
   static const String backIconSVG = "assets/svg/back_icon.svg";
   static const String editLightIconSVG = "assets/svg/edit_light_icon.svg";
   static const String editDarkIconSVG = "assets/svg/edit_dark_icon.svg";
+  static const String bagLightIconSVG = "assets/svg/bag_light_icon.svg";
+  static const String bagDarkIconSVG = "assets/svg/bag_dark_icon.svg";
+  static const String contactDarkIconSVG = "assets/svg/contact_dark_icon.svg";
+  static const String contactLightIconSVG = "assets/svg/contact_light_icon.svg";
+  static const String locationLightIconSVG = "assets/svg/location_light_icon.svg";
+  static const String locationDarkIconSVG = "assets/svg/location_dark_icon.svg";
+  static const String callDarkIconSVG = "assets/svg/call_dark_icon.svg";
+  static const String callLightIconSVG = "assets/svg/call_light_icon.svg";
+  static const String birthdayLightIconSVG = "assets/svg/birthday_light_icon.svg";
+  static const String birthdayDarkIconSVG = "assets/svg/birthday_dark_icon.svg";
+  static const String genderLightIconSVG = "assets/svg/gender_light_icon.svg";
+  static const String genderDarkIconSVG = "assets/svg/gender_dark_icon.svg";
+
 }

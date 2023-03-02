@@ -49,6 +49,7 @@ class AppColors {
   static Color teamBgColor2 = const Color(0xFFFFCC00).withOpacity(0.3);
   static Color teamBgColor3 = const Color(0xFFCAFFCF);
   static Color teamDarkBgColor2 = const Color(0xFFFFF3C1);
+  static Color calenderBgColor = const Color(0xFF0B1221);
   static Gradient appBgColor = const LinearGradient(
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,

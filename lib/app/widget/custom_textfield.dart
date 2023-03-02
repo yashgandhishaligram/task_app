@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:task_app/app/core/theme/colors.dart';
 
@@ -22,7 +23,7 @@ class CustomFormField extends StatelessWidget {
     this.postIconBtn,
     this.prefixIcon,
     this.filteringRegex = ".*",
-    this.isEnabled = true,
+    this.isEnabled,
     this.isObscure = false,
     this.height,
     this.isOtp = false,
@@ -31,6 +32,7 @@ class CustomFormField extends StatelessWidget {
     this.maxLines = 1,
     this.isLabelEnabled = true,
     this.textFieldLabel,
+    this.textFieldLabelSize,
     this.inputformet,
   })  : _keyboardType = keyboardType,
         _inputAction = inputAction,
@@ -41,11 +43,12 @@ class CustomFormField extends StatelessWidget {
   final Widget? postIconBtn;
   final Widget? prefixIcon;
   final bool? isEnabled;
-  final List? inputformet;
+  final List<TextInputFormatter>? inputformet;
   final TextInputType _keyboardType;
   final TextInputAction _inputAction;
   final String _hint;
   final String? textFieldLabel;
+  final double? textFieldLabelSize;
   bool isObscure;
   final double? height;
   final bool isCapitalized;
@@ -73,7 +76,7 @@ class CustomFormField extends StatelessWidget {
           child: Text(
             textFieldLabel!,
             style: TextStyle(
-                fontSize: 14.sp,
+                fontSize: textFieldLabelSize == ""? 14.sp : textFieldLabelSize,
                 fontWeight: FontWeight.w500,
                 color: AppColors.titleTextColor
             ),
@@ -82,10 +85,7 @@ class CustomFormField extends StatelessWidget {
         SizedBox(height: 6),
         TextFormField(
           controller: _controller,
-          // inputFormatters: [
-          //   FilteringTextInputFormatter.allow(RegExp(filteringRegex!)),
-          //   LengthLimitingTextInputFormatter(maxLimits),
-          // ],
+          inputFormatters: inputformet,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           style:  TextStyle(color: isDarkMode ? AppColors.textWhiteColor : AppColors.textFieldTextColor),
           maxLines: maxLines,

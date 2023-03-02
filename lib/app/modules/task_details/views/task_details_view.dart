@@ -418,9 +418,6 @@ class TaskDetailsView extends GetView<TaskDetailsController> {
           onChanged: (value) {
             controller.selectedDropdown.value = value!;
             controller.reloadDropdown.value = !controller.reloadDropdown.value;
-            //print("stuslist value----" + controller.statusList.value[index]["status"].toString());
-           // controller.statusList.value[index]["isSelected"] = controller.statusList.value[index]["isSelected"]!;
-           //  print("isselected------" + controller.statusList.value[index]["isSelected"].toString());
           },
        //    hint: Text(
        //      controller.statusList.value[index]["status"].toString(),
