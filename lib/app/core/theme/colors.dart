@@ -74,6 +74,14 @@ class AppColors {
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
       colors: [ Color(0xFFF9F9F9),Color(0xFFF9F9F9)]);
+  static Gradient membersCardDarkBgColors =  LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [ Color(0xFF292F3F),Color(0xFFD9D9D9)]);
+  static Gradient membersCardLightBgColors =  LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [ Color(0xFFFFFFFF),Color(0xFFFFFFFF)]);
   // static Gradient priorityCardColor =  LinearGradient(
   //     begin: Alignment.topCenter,
   //     end: Alignment.bottomCenter,

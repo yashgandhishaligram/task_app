@@ -15,6 +15,7 @@ abstract class Routes {
   static const EMPLOYEE_HOME = _Paths.EMPLOYEE_HOME;
   static const TASK_DETAILS = _Paths.TASK_DETAILS;
   static const PROFILE = _Paths.PROFILE;
+  static const MEMBER_SELECTION = _Paths.MEMBER_SELECTION;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const EMPLOYEE_HOME = '/employee-home';
   static const TASK_DETAILS = '/task-details';
   static const PROFILE = '/profile';
+  static const MEMBER_SELECTION = '/member-selection';
 }

@@ -632,60 +632,65 @@ class TaskDetailsView extends GetView<TaskDetailsController> {
                           ),
                         ),
                         const SizedBox(height: 5),
-                        Container(
-                          height: 38,
-                          width: MediaQuery.of(context).size.width,
-                          decoration: BoxDecoration(
-                            color: isDarkMode?
-                                AppColors.darkBgColor:
-                            AppColors.timelineBgColor,
-                            borderRadius: BorderRadius.circular(21),
-                          ),
-                          child: Row(
-                            children: [
-                              Container(
-                                height:double.maxFinite,
-                                padding:const EdgeInsets.only(left:7,right:7),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(21),
-                                  color: isDarkMode?
-                                  controller.teamDarkBgColors[index % controller.teamDarkBgColors.length]:
-                                  controller.teamLightBgColors[index % controller.teamLightBgColors.length]
-                                ),
-                                child: workingPersonImageTile(AppImages.profileFemalePNG,controller.workingPersonList),
-                              ),
-                              Spacer(),
-                              Row(
-                                children: [
-                                  Text("2.5 months",
-                                  style: TextStyle(
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w300,
-                                    color: AppColors.titleTextColor
-                                  ),),
-                                  const SizedBox(width: 5),
-                                  Container(
-                                    height: 15,
-                                    width: 15,
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color:isDarkMode?
-                                            AppColors.titleTextColor:
-                                        AppColors.checkBoxBorderColor,
-                                        width: 1
-                                      ),
-                                      borderRadius: BorderRadius.circular(5.0)
-                                    ),
-                                    child:  Center(
-                                        child: Icon(
-                                          Icons.keyboard_arrow_right_rounded,
-                                    color: AppColors.titleTextColor,
-                                    size: 12,)),
+                        InkWell(
+                          onTap: () {
+                            Get.toNamed(Routes.MEMBER_SELECTION);
+                          },
+                          child: Container(
+                            height: 38,
+                            width: MediaQuery.of(context).size.width,
+                            decoration: BoxDecoration(
+                              color: isDarkMode?
+                                  AppColors.darkBgColor:
+                              AppColors.timelineBgColor,
+                              borderRadius: BorderRadius.circular(21),
+                            ),
+                            child: Row(
+                              children: [
+                                Container(
+                                  height:double.maxFinite,
+                                  padding:const EdgeInsets.only(left:7,right:7),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(21),
+                                    color: isDarkMode?
+                                    controller.teamDarkBgColors[index % controller.teamDarkBgColors.length]:
+                                    controller.teamLightBgColors[index % controller.teamLightBgColors.length]
                                   ),
-                                  const SizedBox(width: 15),
-                                ],
-                              )
-                            ],
+                                  child: workingPersonImageTile(AppImages.profileFemalePNG,controller.workingPersonList),
+                                ),
+                                Spacer(),
+                                Row(
+                                  children: [
+                                    Text("2.5 months",
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w300,
+                                      color: AppColors.titleTextColor
+                                    ),),
+                                    const SizedBox(width: 5),
+                                    Container(
+                                      height: 15,
+                                      width: 15,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color:isDarkMode?
+                                              AppColors.titleTextColor:
+                                          AppColors.checkBoxBorderColor,
+                                          width: 1
+                                        ),
+                                        borderRadius: BorderRadius.circular(5.0)
+                                      ),
+                                      child:  Center(
+                                          child: Icon(
+                                            Icons.keyboard_arrow_right_rounded,
+                                      color: AppColors.titleTextColor,
+                                      size: 12,)),
+                                    ),
+                                    const SizedBox(width: 15),
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                         )
                       ],

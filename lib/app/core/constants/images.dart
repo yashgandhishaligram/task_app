@@ -59,5 +59,7 @@ class AppImages {
   static const String birthdayDarkIconSVG = "assets/svg/birthday_dark_icon.svg";
   static const String genderLightIconSVG = "assets/svg/gender_light_icon.svg";
   static const String genderDarkIconSVG = "assets/svg/gender_dark_icon.svg";
+  static const String searchLightIconSVG = "assets/svg/search_light_icon.svg";
+  static const String searchDarkIconSVG = "assets/svg/search_dark_icon.svg";
 
 }
